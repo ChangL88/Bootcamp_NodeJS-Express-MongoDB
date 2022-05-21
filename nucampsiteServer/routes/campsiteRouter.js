@@ -12,6 +12,14 @@ campsiteRouter.route('/')
         res.json(campsites);
     })
     .catch(err => next(err));
+    // Campsite.find()
+    // .then(campsites => {
+    //     console.log(campsites.some(obj => obj.name === 'React Lake Campground'))
+    //     res.statusCode = 200;
+    //     res.setHeader('Content-Type', 'application/json');
+    //     res.json(campsites);
+    // })
+    // .catch(err => next(err));
 })
 .post((req, res, next) => {
     Campsite.create(req.body)
@@ -214,5 +222,6 @@ campsiteRouter.route('/:campsiteId/comments/:commentId')
     })
     .catch(err => next(err));
 });
+
 
 module.exports = campsiteRouter;
