@@ -9,7 +9,7 @@ promotionRouter.route('/')
 //     res.setHeader('Content-Type', 'text/plain');
 //     next();
 // })
-.get((req, res, nexy) => {
+.get((req, res, next) => {
     Promotion.find()
     .then(promotion => {
         res.statusCode = 200;
@@ -18,7 +18,7 @@ promotionRouter.route('/')
     })
     .catch(err => next(err));
 })
-.post((req, res) => {
+.post((req, res, next) => {
     Promotion.create(req.body)
     .then(promotion => {
         console.log('Promotion Created ', promotion);
@@ -33,7 +33,7 @@ promotionRouter.route('/')
     res.statusCode = 403;
     res.end('PUT operation not supported on /promotion');
 })
-.delete((req, res) => {
+.delete((req, res, next) => {
     Promotion.deleteMany()
     .then(response => {
         res.statusCode = 200;
