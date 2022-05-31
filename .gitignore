@@ -2,3 +2,5 @@ node_modules
 mongodb
 sessions
 temp
+nucampsiteServer/bin/server.key
+nucampsiteServer/bin/server.cert
